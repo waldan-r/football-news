@@ -77,7 +77,7 @@ def show_news(request, id):
 @require_POST
 def add_news_entry_ajax(request):
     title = strip_tags(request.POST.get("title"))
-    content = request.POST.get("content")
+    content = strip_tags(request.POST.get("content"))
     category = request.POST.get("category")
     thumbnail = request.POST.get("thumbnail")
     is_featured = request.POST.get("is_featured") == 'on'  # checkbox handling
